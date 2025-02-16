@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Conversion Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Comprehensive Conversion Calculator</h1>
+        <div class="calculator">
+            <label for="conversion-type">Select Conversion Type:</label>
+            <select id="conversion-type">
+                <option value="length">Length</option>
+                <option value="weight">Weight</option>
+                <option value="temperature">Temperature</option>
+                <option value="area">Area</option>
+                <option value="volume">Volume</option>
+                <option value="speed">Speed</option>
+                <option value="time">Time</option>
+            </select>
+
+            <!-- Length Conversion -->
+            <div id="length-conversion" class="conversion-options">
+                <h3>Length Conversion</h3>
+                <label for="length-from">From:</label>
+                <select id="length-from">
+                    <option value="meters">Meters</option>
+                    <option value="feet">Feet</option>
+                    <option value="kilometers">Kilometers</option>
+                    <option value="miles">Miles</option>
+                    <option value="inches">Inches</option>
+                    <option value="centimeters">Centimeters</option>
+                    <option value="millimeters">Millimeters</option>
+                    <option value="yards">Yards</option>
+                </select>
+
+                <label for="length-to">To:</label>
+                <select id="length-to">
+                    <option value="feet">Feet</option>
+                    <option value="meters">Meters</option>
+                    <option value="miles">Miles</option>
+                    <option value="kilometers">Kilometers</option>
+                    <option value="inches">Inches</option>
+                    <option value="centimeters">Centimeters</option>
+                    <option value="millimeters">Millimeters</option>
+                    <option value="yards">Yards</option>
+                </select>
+
+                <label for="length-value">Value:</label>
+                <input type="number" id="length-value" placeholder="Enter value">
+
+                <button onclick="convertLength()">Convert</button>
+                <p id="length-result"></p>
+            </div>
+
+            <!-- Weight Conversion -->
+            <div id="weight-conversion" class="conversion-options" style="display: none;">
+                <h3>Weight Conversion</h3>
+                <label for="weight-from">From:</label>
+                <select id="weight-from">
+                    <option value="kilograms">Kilograms</option>
+                    <option value="grams">Grams</option>
+                    <option value="pounds">Pounds</option>
+                    <option value="ounces">Ounces</option>
+                    <option value="milligrams">Milligrams</option>
+                    <option value="tons">Metric Tons</option>
+                </select>
+
+                <label for="weight-to">To:</label>
+                <select id="weight-to">
+                    <option value="pounds">Pounds</option>
+                    <option value="kilograms">Kilograms</option>
+                    <option value="grams">Grams</option>
+                    <option value="ounces">Ounces</option>
+                    <option value="milligrams">Milligrams</option>
+                    <option value="tons">Metric Tons</option>
+                </select>
+
+                <label for="weight-value">Value:</label>
+                <input type="number" id="weight-value" placeholder="Enter value">
+
+                <button onclick="convertWeight()">Convert</button>
+                <p id="weight-result"></p>
+            </div>
+
+            <!-- Temperature Conversion -->
+            <div id="temperature-conversion" class="conversion-options" style="display: none;">
+                <h3>Temperature Conversion</h3>
+                <label for="temp-from">From:</label>
+                <select id="temp-from">
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+
+                <label for="temp-to">To:</label>
+                <select id="temp-to">
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="celsius">Celsius</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+
+                <label for="temp-value">Value:</label>
+                <input type="number" id="temp-value" placeholder="Enter value">
+
+                <button onclick="convertTemperature()">Convert</button>
+                <p id="temp-result"></p>
+            </div>
+
+            <!-- Area Conversion -->
+            <div id="area-conversion" class="conversion-options" style="display: none;">
+                <h3>Area Conversion</h3>
+                <label for="area-from">From:</label>
+                <select id="area-from">
+                    <option value="square_meters">Square Meters</option>
+                    <option value="square_feet">Square Feet</option>
+                    <option value="acres">Acres</option>
+                    <option value="hectares">Hectares</option>
+                    <option value="square_kilometers">Square Kilometers</option>
+                    <option value="square_miles">Square Miles</option>
+                </select>
+
+                <label for="area-to">To:</label>
+                <select id="area-to">
+                    <option value="square_feet">Square Feet</option>
+                    <option value="square_meters">Square Meters</option>
+                    <option value="acres">Acres</option>
+                    <option value="hectares">Hectares</option>
+                    <option value="square_kilometers">Square Kilometers</option>
+                    <option value="square_miles">Square Miles</option>
+                </select>
+
+                <label for="area-value">Value:</label>
+                <input type="number" id="area-value" placeholder="Enter value">
+
+                <button onclick="convertArea()">Convert</button>
+                <p id="area-result"></p>
+            </div>
+
+            <!-- Volume Conversion -->
+            <div id="volume-conversion" class="conversion-options" style="display: none;">
+                <h3>Volume Conversion</h3>
+                <label for="volume-from">From:</label>
+                <select id="volume-from">
+                    <option value="liters">Liters</option>
+                    <option value="gallons">Gallons</option>
+                    <option value="milliliters">Milliliters</option>
+                    <option value="cubic_meters">Cubic Meters</option>
+                    <option value="cubic_feet">Cubic Feet</option>
+                </select>
+
+                <label for="volume-to">To:</label>
+                <select id="volume-to">
+                    <option value="gallons">Gallons</option>
+                    <option value="liters">Liters</option>
+                    <option value="milliliters">Milliliters</option>
+                    <option value="cubic_meters">Cubic Meters</option>
+                    <option value="cubic_feet">Cubic Feet</option>
+                </select>
+
+                <label for="volume-value">Value:</label>
+                <input type="number" id="volume-value" placeholder="Enter value">
+
+                <button onclick="convertVolume()">Convert</button>
+                <p id="volume-result"></p>
+            </div>
+
+            <!-- Speed Conversion -->
+            <div id="speed-conversion" class="conversion-options" style="display: none;">
+                <h3>Speed Conversion</h3>
+                <label for="speed-from">From:</label>
+                <select id="speed-from">
+                    <option value="kmh">Kilometers per Hour</option>
+                    <option value="mph">Miles per Hour</option>
+                    <option value="ms">Meters per Second</option>
+                </select>
+
+                <label for="speed-to">To:</label>
+                <select id="speed-to">
+                    <option value="mph">Miles per Hour</option>
+                    <option value="kmh">Kilometers per Hour</option>
+                    <option value="ms">Meters per Second</option>
+                </select>
+
+                <label for="speed-value">Value:</label>
+                <input type="number" id="speed-value" placeholder="Enter value">
+
+                <button onclick="convertSpeed()">Convert</button>
+                <p id="speed-result"></p>
+            </div>
+
+            <!-- Time Conversion -->
+            <div id="time-conversion" class="conversion-options" style="display: none;">
+                <h3>Time Conversion</h3>
+                <label for="time-from">From:</label>
+                <select id="time-from">
+                    <option value="seconds">Seconds</option>
+                    <option value="minutes">Minutes</option>
+                    <option value="hours">Hours</option>
+                    <option value="days">Days</option>
+                    <option value="weeks">Weeks</option>
+                    <option value="years">Years</option>
+                </select>
+
+                <label for="time-to">To:</label>
+                <select id="time-to">
+                    <option value="minutes">Minutes</option>
+                    <option value="seconds">Seconds</option>
+                    <option value="hours">Hours</option>
+                    <option value="days">Days</option>
+                    <option value="weeks">Weeks</option>
+                    <option value="years">Years</option>
+                </select>
+
+                <label for="time-value">Value:</label>
+                <input type="number" id="time-value" placeholder="Enter value">
+
+                <button onclick="convertTime()">Convert</button>
+                <p id="time-result"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
